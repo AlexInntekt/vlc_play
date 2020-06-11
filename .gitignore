@@ -19,6 +19,8 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+pyvenv.cfg
+lib64
 
 # Installer logs
 pip-log.txt
