@@ -36,10 +36,24 @@ def f3():
         pass
 
 
+def f4():
+    vlc_options = ""#"--embedded-video" 
+    vlc_instance = vlc.Instance(vlc_options)
+    # vlc.Instance.url = filepath
+    
+    player = vlc_instance.media_player_new() 
+    player.set_mrl(filepath)
+    player.play()
+
+    while True:
+        pass
+
+
+
 
 
 def run():
-    f3()
+    f4()
 
 
 run()
