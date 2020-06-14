@@ -23,7 +23,7 @@ def f2():
         pass
 
 def f3():
-    vlc_options = "--no-audio"
+    vlc_options = "--no-audio -f" 
     vlc_instance = vlc.Instance(vlc_options)
     # vlc.Instance.url = filepath
     
