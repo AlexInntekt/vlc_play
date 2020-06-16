@@ -1,5 +1,7 @@
 import vlc
+import time
 
+filepath = "funny_head.mkv"
 filepath = "cats.mkv"
 
 def f1():
@@ -23,31 +25,19 @@ def f2():
         pass
 
 def f3():
-    vlc_options = "--embedded-video --no-audio --fullscreen"
+    vlc_options = "-I qt --play-and-exit -f --qt-fullscreen-screennumber=0" 
     vlc_instance = vlc.Instance(vlc_options)
     # vlc.Instance.url = filepath
     
     player = vlc_instance.media_player_new() 
     player.set_mrl(filepath)
     player.set_fullscreen(True)
+
     player.play()
 
-    while True:
+    #time.sleep(7)
+    while True: 
         pass
-
-
-def f4():
-    vlc_options = ""#"--embedded-video" 
-    vlc_instance = vlc.Instance(vlc_options)
-    # vlc.Instance.url = filepath
-    
-    player = vlc_instance.media_player_new() 
-    player.set_mrl(filepath)
-    player.play()
-
-    while True:
-        pass
-
 
 
 
