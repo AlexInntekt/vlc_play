@@ -5,15 +5,16 @@ export screen_height="1080"
 export filepath="cats.mkv"
 
 vlc media/$filepath &
+export its_pid=$!
 export s="n"
 sleep 1s
-vlc1=$(xdotool search --onlyvisible --name vlc | sed -n 1p)
+#vlc1=$(xdotool search --onlyvisible --name vlc | sed -n 1p)
+export its_window_id=$()
 echo $vlc1
 echo "hahahahahahah"
 
-xdotool windowsize $vlc1 100 1080
+xdotool windowsize $vlc1 100 300
 #xdotool windowsize $vlc1 $screen_width $screen_height 
 
-xdotool windowmove $vlc1 1920 0
+xdotool windowmove $vlc1 100 50
 
-xdotool search --onlyvisible --name vlc
