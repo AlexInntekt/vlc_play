@@ -13,8 +13,8 @@ export its_window_id=$(xdotool search --all --pid $its_pid --name vlc)
 echo $its_window_id
 echo "hahahahahahah"
 
-xdotool windowsize $its_window_id 100 300
+xdotool windowsize $its_window_id 300 600
 #xdotool windowsize $its_window_id $screen_width $screen_height 
 sleep 2s
-xdotool windowmove $its_window_id 100 50
+xdotool windowmove $its_window_id 700 50
 
