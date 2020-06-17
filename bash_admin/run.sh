@@ -9,11 +9,11 @@ export example_filepath="cats.mkv"
 play_background()
 {
 	export its_path="$1.mkv" 
-	vlc media/$its_path &
+	vlc media/$its_path -Irc &
 	sleep 1s
 	export its_pid=$!
 	export s="n"
-	#vlc1=$(xdotool search --onlyvisible --name vlc | sed -n 1p)
+
 	export its_window_id=$(xdotool search --all --pid $its_pid --name vlc)
 	echo $its_window_id
 

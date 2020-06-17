@@ -1,1 +1,3 @@
 xdotool version 3.20160805.1
+Alltray version 0.71b
+
