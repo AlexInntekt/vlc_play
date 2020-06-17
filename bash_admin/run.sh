@@ -9,7 +9,7 @@ export example_filepath="cats.mkv"
 play_background()
 {
 	export its_path="$1.mkv" 
-	vlc media/$its_path -Irc &
+	vlc media/$its_path &
 	sleep 1s
 	export its_pid=$!
 	export s="n"
