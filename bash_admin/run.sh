@@ -4,13 +4,13 @@ export screen_width="1920"
 export screen_height="1080"
 
 
-export filepath="cats.mkv"
+export filepath1="cats.mkv"
 
 
 play_background()
 {
 	sleep 2s
-	vlc media/$filepath &
+	vlc media/$filepath$1 &
 	sleep 1s
 	export its_pid=$!
 	export s="n"
