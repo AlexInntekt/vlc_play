@@ -9,7 +9,7 @@ export example_filepath="cats.mkv"
 play_background()
 {
 	export its_path="$1.mkv" 
-	vlc media/$its_path &
+	vlc --loop  media/$its_path &
 	sleep 1s
 	export its_pid=$!
 	export s="n"
@@ -22,7 +22,9 @@ play_background()
 
 	xdotool windowsize $its_window_id $(($screen_width/2)) $screen_height
 	xdotool windowmove $its_window_id $x_position 0
+	xdotool getwindowgeometry $its_window_id
 }
+
 
 
 play_background 1
