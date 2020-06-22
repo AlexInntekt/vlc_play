@@ -1,11 +1,22 @@
 export screen_width="1920"
 export screen_height="1080"
 
+export filepath=""
+
+if [ -z "$2" ]
+then
+  filepath="media/i2.mkv"
+else
+  filepath=$2
+fi
+
+echo "file: "$filepath
+
 export its_background_player=$(echo $(grep "pid$1" ins.log) | cut -d "<" -f2 | cut -d ">" -f1)
 
 kill -STOP $its_background_player
 
-vlc media/i2.mkv --play-and-exit & 
+vlc $filepath --play-and-exit & 
 export its_pid=$!
 echo "its_pid: $its_pid"
 sleep 0.5s
@@ -19,3 +30,8 @@ xdotool windowmove $its_window_id $x_position 0
 
 wait $its_pid
 echo "finished!" ; kill -CONT $its_background_player 
+
+
+
+# argument mandatory: $1   zone number
+# argument optional:  $2   path of media file
