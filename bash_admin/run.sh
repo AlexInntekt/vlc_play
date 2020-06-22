@@ -31,7 +31,7 @@ play_background()
 	xdotool windowmove $its_window_id $x_position 0
 	
 	echo "" >> $states_file
-	echo "pid<"$its_pid">" >> $states_file
+	echo "pid$1<"$its_pid">" >> $states_file
 	xdotool getwindowgeometry $its_window_id >> $states_file
 }
 
