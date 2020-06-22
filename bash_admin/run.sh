@@ -1,16 +1,23 @@
 # export vlc1="398458886"
 
+export states_file="ins.log"
+
 export screen_width="1920"
 export screen_height="1080"
 
 
 export example_filepath="cats.mkv"
 
+init()
+{
+  echo "" > $states_file
+}
+
 play_background()
 {
 	export its_path="$1.mkv" 
 	vlc --loop  media/$its_path &
-	sleep 1s
+	sleep 0.5s
 	export its_pid=$!
 	export s="n"
 
@@ -22,11 +29,14 @@ play_background()
 
 	xdotool windowsize $its_window_id $(($screen_width/2)) $screen_height
 	xdotool windowmove $its_window_id $x_position 0
-	xdotool getwindowgeometry $its_window_id
+	
+	echo "" >> $states_file
+	echo $its_pid >> $states_file
+	xdotool getwindowgeometry $its_window_id >> $states_file
 }
 
 
-
+init
 play_background 1
 play_background 2 
 play_background 3
