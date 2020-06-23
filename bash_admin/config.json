@@ -7,6 +7,14 @@
    "width": "30",
    "height": "25",
    "media_path": "media/1.mkv"
+ },
+ "zone2":
+ {
+    "media_path": "media/2.mkv"
+ },
+ "zone3":
+ {
+    "media_path": "media/3.mkv"
  }
 
 }

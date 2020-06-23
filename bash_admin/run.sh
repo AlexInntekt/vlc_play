@@ -15,8 +15,9 @@ init()
 
 play_background()
 {
-	export its_path="$1.mkv" 
-	vlc --loop  media/$its_path &
+	echo "zone"$1
+	export its_path=$(tools/bashjson/bashjson.sh config.json zone$1 media_path) 
+	vlc --loop  $its_path &
 	sleep 0.5s
 	export its_pid=$!
 	export s="n"
@@ -39,7 +40,7 @@ play_background()
 init
 play_background 1
 play_background 2 
-#play_background 3
+play_background 3
 
 
 
