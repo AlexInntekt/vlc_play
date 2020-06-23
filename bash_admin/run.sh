@@ -31,9 +31,12 @@ play_background()
 	xdotool windowsize $its_window_id $(($screen_width/2)) $screen_height
 	xdotool windowmove $its_window_id $x_position 0
 	
-	echo "" >> $states_file
-	echo "pid$1<"$its_pid">" >> $states_file
-	xdotool getwindowgeometry $its_window_id >> $states_file
+    echo "zone{$1}pid<$its_pid>windowid($its_window_id)" >> $states_file
+	# echo "" >> $states_file
+	# echo "pid$1<"$its_pid">" >> $states_file
+	# xdotool getwindowgeometry $its_window_id >> $states_file
+    #wait $its_pid
+    #echo "finished!" ; kill -CONT $its_background_player ; export line_to_delete=$(grep -n "pid<$its_pid>" ips.log | cut -d : -f1)"d"; sed $line_to_delete ips.log -i 
 }
 
 
