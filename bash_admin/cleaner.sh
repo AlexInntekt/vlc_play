@@ -10,7 +10,7 @@ while IFS= read -r line; do
 
     if kill -0 $pid;
     then
-        echo ""
+        continue
     else
         bash delete_log.sh $pid $file_of_pids
     fi
