@@ -11,6 +11,7 @@ export example_filepath="cats.mkv"
 init()
 {
   echo "" > $states_file
+  echo "pid: "$$ > $states_file
 }
 
 play_background()
@@ -35,17 +36,19 @@ play_background()
 	# echo "" >> $states_file
 	# echo "pid$1<"$its_pid">" >> $states_file
 	# xdotool getwindowgeometry $its_window_id >> $states_file
-    #wait $its_pid
-    #echo "finished!" ; kill -CONT $its_background_player ; export line_to_delete=$(grep -n "pid<$its_pid>" ips.log | cut -d : -f1)"d"; sed $line_to_delete ips.log -i 
 }
 
 
-init
-play_background 1
-play_background 2 
-play_background 3
+start()
+{
+    init
+    play_background 1
+    play_background 2 
+    play_background 3
+}
 
 
+start
 
 
 

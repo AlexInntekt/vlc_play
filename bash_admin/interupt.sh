@@ -48,7 +48,7 @@ echo "zone{$1}pid<$its_pid>windowid($its_window_id)" >> ips.log
 
 #after the interupt player finishes / dies, play again the background player
 wait $its_pid
-echo "finished!" ; kill -CONT $its_background_player ; export line_to_delete=$(grep -n "pid<$its_pid>" ips.log | cut -d : -f1)"d"; sed $line_to_delete ips.log -i 
+echo "finished!" ; kill -CONT $its_background_player ; bash delete_log.sh $its_pid ips.log
 
 
 
