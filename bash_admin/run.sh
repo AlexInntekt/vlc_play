@@ -11,7 +11,7 @@ export example_filepath="cats.mkv"
 init()
 {
   echo "" > $states_file
-  echo "pid: "$$ > $states_file
+  echo "master_pid<"$$">" > $states_file
 }
 
 play_background()
