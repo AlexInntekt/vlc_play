@@ -10,7 +10,7 @@ export example_filepath="cats.mkv"
 
 init()
 {
-  echo "" > $states_file
+  bash cleaner.sh $states_file
   echo "master_pid<"$$">" > $states_file
 }
 
@@ -39,7 +39,7 @@ play_background()
 }
 
 
-start()
+start_background_players()
 {
     init
     play_background 1
@@ -48,8 +48,8 @@ start()
 }
 
 
-start
-bash project_housekeeper.sh
+start_background_players
+
 
 
 
