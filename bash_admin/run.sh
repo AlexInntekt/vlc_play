@@ -49,7 +49,7 @@ start()
 
 
 start
-
+bash project_housekeeper.sh
 
 
 
